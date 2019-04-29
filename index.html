@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> React Project </title>
+        <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .heading {
+                color: pink;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <div id="description"></div>
+        <script type="text/babel">
+            let city = "Toronto";
+            ReactDOM.render(
+                <h1 className="heading"> Hello {city} </h1>,
+                document.getElementById("root")
+            );
+
+            ReactDOM.render(
+                React.createElement(
+                    "h1",
+                    {"style": {"text-align":"center"}},
+                    "Just using this to practice react"
+                ),
+                document.getElementById("description")
+            );
+
+        </script>
+    </body>
+</html>
