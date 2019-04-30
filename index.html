@@ -17,18 +17,25 @@
         <div id="description"></div>
         <script type="text/babel">
 
-            const Lake = ({name}) => <h1>{name}</h1>;
+            const lakeList = [
+                {id: 1, name: "Lake Simcoe", trailhead: "Lake Simcoe"},
+                {id: 2, name: "Lake Ontario", trailhead: "Lake Ontario"},
+                {id: 3, name: "Lake Erie", trailhead: "Best Lake"}
+            ];
+            const SkiResort = ({name}) => <h1>{name}</h1>;
 
-            const App = () => (
-                <div>
-                    <Lake name="Lake Tahoe" />
-                    <Lake name="Lake Simcoe" />
-                    <Lake name="Lake Ontario" />
-                </div>
-            );
+            const App = (props) => {
+                return(
+                    <ul>
+                        {props.lakes.map((lake) =>
+                            <li key={lake.id}>{lake.trailhead}</li>
+                        )}
+                    </ul>
+                )
+            }
 
             ReactDOM.render(
-                <App />,
+                <App lakes={lakeList} />,
                 document.getElementById("root")
             );
 

@@ -1,17 +1,39 @@
-React component:
-const componentName = (props) => {
+Author: Michael Vamvakas
+Description: This file is filled with react syntax that I may need to use in the future
+
+=============================================================================================================
+React Components:
+
+const ComponentName = (props) => {
     return (
         html elements/Other react components
-        note: Variables displayed in elements by using {props.variableName}
     )
 };
+class ComponentName extends React.Component { -> This way using javascript classes
+    state {
+        var1: value
+    }
+    eventFunc = () => this.setState({stateVar: newVal}) // ->This is the same as creating a react component
+    render() { -> render() needs to be inside of Component class
+        return (
+            html elements/Other react components
+        )
+    }
+};
 ReactDOM.render(
-    <componentName /> ->To create the component with no variables
-    <Hello variable1="string1", variable2="string2"/>, ->Adding variables to component
+    <ComponentName /> ->To create the component with no variables
+    <ComponentName variable1="string1", variable2="string2"/>, ->Adding variables to component
     document.getElementById("root")
 );
 
 Additional Notes:
 - Variables displayed in elements by using {props.variableName}
+- Displaying variables in state use {this.state}
+- state can only be used when it is a javascript class
+- React component names need to start with an uppercase
 - the props tag when declaring component can be replaced with {variable1, variable2, etc}
-- Can use the <componentName /> inside of other react components
+- Can use the <ComponentName /> inside of other react components
+- To call the event, use this.eventFunc
+- Variables passed in from render can also be an array, use {array.map((var) => html)} to go through array
+- When using array.map make sure that child elements have a unique key
+=============================================================================================================
