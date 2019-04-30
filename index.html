@@ -16,16 +16,26 @@
         <div id="root"></div>
         <div id="description"></div>
         <script type="text/babel">
-            let city = "Toronto";
+
+            const Lake = ({name}) => <h1>{name}</h1>;
+
+            const App = () => (
+                <div>
+                    <Lake name="Lake Tahoe" />
+                    <Lake name="Lake Simcoe" />
+                    <Lake name="Lake Ontario" />
+                </div>
+            );
+
             ReactDOM.render(
-                <h1 className="heading"> Hello {city} </h1>,
+                <App />,
                 document.getElementById("root")
             );
 
             ReactDOM.render(
                 React.createElement(
                     "h1",
-                    {"style": {"text-align":"center"}},
+                    {"style": {"textAlign":"center"}},
                     "Just using this to practice react"
                 ),
                 document.getElementById("description")

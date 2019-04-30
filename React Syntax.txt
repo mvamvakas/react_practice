@@ -1,0 +1,17 @@
+React component:
+const componentName = (props) => {
+    return (
+        html elements/Other react components
+        note: Variables displayed in elements by using {props.variableName}
+    )
+};
+ReactDOM.render(
+    <componentName /> ->To create the component with no variables
+    <Hello variable1="string1", variable2="string2"/>, ->Adding variables to component
+    document.getElementById("root")
+);
+
+Additional Notes:
+- Variables displayed in elements by using {props.variableName}
+- the props tag when declaring component can be replaced with {variable1, variable2, etc}
+- Can use the <componentName /> inside of other react components
